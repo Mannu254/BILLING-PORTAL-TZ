@@ -310,7 +310,6 @@ table{
      url: "{{route('export_orders')}}",
      data: {'orders':selected_values,'account':account,"_token":"{{ csrf_token() }}"}, 
   
-     
    
 success: function (data) {
   $("tbody#table1").html("");

@@ -45,9 +45,11 @@ class SMController extends Controller
     public function contract_update(){
 
         $templates =DB::connection('service_manager')->table('_smtblContractMatrix')
-        ->whereIn('AutoIdx',[7020,6706,2301,1,2549,2300,3587,2588,7021,2302,2587])
+        ->whereIn('AutoIdx',[7020,6706,2301,1,2549,2300,3587,2588,7021,2302,2587,11372])
         ->select('AutoIdx','cCode','cDescription')
         ->get();
+
+       
         return view('SM.contract_update',compact('templates'));
 
 

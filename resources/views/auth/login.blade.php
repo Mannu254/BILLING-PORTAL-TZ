@@ -20,11 +20,11 @@ body {
 
 
 .container {
-margin-top: 60px;
+margin-top: 7%;
   position: relative;
   width: 100%;
-  max-width: 850px;
- height: 400px !important;
+  max-width: 890px !important;
+ height: 420px !important;
   display: flex;
   background: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, .1);
@@ -73,15 +73,17 @@ margin-top: 60px;
 
 .col-left,
 .col-right {
-  width: 55%;
+  width: 52%;
   padding: 45px 35px;
   display: flex;
 }
 
 .col-left {
-  width: 55%;
+  width: 60%;
   
   background-image: url("../storage/uploads/tzlogo.png");
+  background-size: cover;
+  
   -webkit-clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
   clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
 }

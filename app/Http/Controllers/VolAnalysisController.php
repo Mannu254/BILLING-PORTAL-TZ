@@ -519,9 +519,7 @@ class VolAnalysisController extends Controller
                 ->where('sa.cCode', 'NOT LIKE', 'CON%')  
                  ->where('sa.cDescription', 'NOT LIKE', 'KISA%') 
                 ->where('sa.cDescription', 'NOT LIKE', 'TAI%')
-                ->get();
-
-              
+                ->get();         
 
                 
     
@@ -552,12 +550,6 @@ class VolAnalysisController extends Controller
                     'total_col' => $total_col,
                     'individual_asset_totals' => $individual_asset_totals,
                     'details' => $details,
-                    
-                    
-
-
-
-
 
                 ];
 

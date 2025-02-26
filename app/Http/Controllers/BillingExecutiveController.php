@@ -591,9 +591,7 @@ class BillingExecutiveController extends Controller
          ->leftjoin('_bvARAccountsFull As cl', 'cl.DCLink', '=', 'sa.icustomerid')  
          ->leftjoin('_cplmeterreading As cmr', 'sa.autoidx', '=', 'cmr.assetid')  
           ->whereYear('ReadingDate', '=', $today->year)
-         ->whereMonth('ReadingDate', '=', $today->month)   
-       
-        
+         ->whereMonth('ReadingDate', '=', $today->month)          
         
 
 
@@ -643,7 +641,7 @@ class BillingExecutiveController extends Controller
             ->groupBy('uhl.UserValue','inv.orderNum')
             ->first();
 
-//  dd($check_if_done);
+//dd($check_if_done);
 
           
 
@@ -786,7 +784,7 @@ class BillingExecutiveController extends Controller
            ->first();
 
            if(empty($next_slab)){
-            return redirect()->back()->with('error','Error in Slabs available contact Administrator');
+            return redirect()->back()->with('error','Error in Mono Slabs available contact Administrator');
            }
 
       
@@ -973,6 +971,10 @@ class BillingExecutiveController extends Controller
             ->where('iToqty','>=',$Increment_1)
             ->select('iFromQty','iToqty','fRate')
             ->first();
+
+            if(empty($next_slab_col)){
+                return redirect()->back()->with('error','Error in Color Slabs available contact Administrator');
+               }
 
              //  we get the difference of this slab
            $diff_slab_color =($next_slab_col->iToqty - $next_slab_col->iFromQty)+1;

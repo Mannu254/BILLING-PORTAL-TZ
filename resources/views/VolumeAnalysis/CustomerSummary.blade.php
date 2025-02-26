@@ -6,10 +6,10 @@
     
  }
   td {
-     font-size: 9px !important;
+     font-size: 8px !important;
      font-family: 'Roboto', sans-serif !important;
      white-space: nowrap;
-     
+     color: black;
      float: right !important;
  }
  p,h5,h3,h4{
@@ -56,8 +56,8 @@
   <th>Mon PMR</th>
   <th>Mon Pgs</th>
   <th>Mon MV</th>
-  <th>Mon Rate</th>
-  <th>Mon Amount</th>
+  <th>Mon <br> Rate</th>
+  <th>Mon <br> Amount</th>
 
   <th>Col CMR</th>
   <th>Col PMR</th>
@@ -98,7 +98,7 @@
   <td>{{ $sa->cCode }}</td>
   <td>{{ $sa->ucSASerialNo }}</td>
   <td>{{$sa->cDescription}}</td>
-  <td>{{ $sa->cLocation}}</td> 
+  <td style="font-size:6px !important;">{{ $sa->cLocation}}</td> 
   
   <td>{{ $sa->MonCMR ?? '' }}</td>
   <td>{{ $sa->MonPMR ?? ''}}</td>

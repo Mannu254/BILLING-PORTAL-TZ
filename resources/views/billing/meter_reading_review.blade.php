@@ -443,15 +443,7 @@ var grandTotalCol = 0;
    var color_cmr = $("input[name='color_cmr[]']").eq(index).val().replace(/,/g, "");
    var color_pmr = $("input[name='color_pmr[]']").eq(index).val().replace(/,/g, ""); 
 
-  
-
-    
-   var copies_color =parseInt(color_cmr)-parseInt(color_pmr); 
-
-   
-   
-
-  
+   var copies_color =parseInt(color_cmr)-parseInt(color_pmr);   
 
 
    $(".copies_color").eq(index).val(copies_color.toLocaleString()); 
@@ -476,15 +468,6 @@ var grandTotalCol = 0;
 
   var copies_mono =parseInt(mono_cmr)-parseInt(mono_pmr); 
   $(".copies_mono").eq(index).val(copies_mono.toLocaleString());
-
-
-
-
-
-
-
-
-
   
    grandTotalMon = parseInt(grandTotalMon) + parseInt(copies_mono);  
    $('#total_mono').html(grandTotalMon.toLocaleString());

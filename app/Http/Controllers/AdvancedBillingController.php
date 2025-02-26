@@ -452,6 +452,8 @@ class AdvancedBillingController extends Controller
          ->select('iFromQty','iToqty','fRate')
          ->first();
 
+         
+
          if(empty($next_slab)){
           return redirect()->back()->with('error','Error in Slabs available contact Administrator');
          }
@@ -651,9 +653,14 @@ class AdvancedBillingController extends Controller
           ->select('iFromQty','iToqty','fRate')
           ->first();
 
+          if(empty($next_slab_col)){
+            return redirect()->back()->with('error','Error in Col Slabs available contact Administrator');
+           }
+
            //  we get the difference of this slab
          $diff_slab_color =($next_slab_col->iToqty - $next_slab_col->iFromQty)+1;
 
+       
          //  we check if the remainder fulls fall in this slab or exceed
             $diff_bal_slab =$diff_remaining_color -$diff_slab_color;
 
@@ -916,7 +923,7 @@ class AdvancedBillingController extends Controller
         //get po number
       //get po number
       $po_number =DB::table('OrdersDf')
-      ->where('DefaultCounter',101000000)
+      ->where('DefaultCounter',101000002)
       ->select('OrderPrefix','DNoPadLgth','NextCustNo')
       ->first();
 
@@ -924,7 +931,7 @@ class AdvancedBillingController extends Controller
       
 
       $update =DB::table('OrdersDf')
-      ->where('DefaultCounter',101000000)
+      ->where('DefaultCounter',101000002)
       ->update([
       'NextCustNo' => $po_number->NextCustNo +1
      ]);
@@ -1149,7 +1156,7 @@ class AdvancedBillingController extends Controller
 
       $update_udf =DB::table('_etblUserHistLink')
       ->insert([
-     'userdictid' => 101000037,
+     'userdictid' => 60,
      'Tableid' => $invoice_id,
      'UserValue' => 'MR'       
     ]);
@@ -2902,7 +2909,7 @@ class AdvancedBillingController extends Controller
       $tbillmeter = "BILLCOL";
       $treadingdate = "1900-01-01";
       $total_col_con =$color_consolidated->total_color ?? 0;
-      $over_n_aboveC =$mono_consolidated->over_n_aboveC ?? 0;
+      $over_n_aboveC =$color_consolidated->over_n_aboveC ?? 0;
 
 
      
@@ -3641,7 +3648,7 @@ DB::raw("(CASE WHEN icurrencyid = null THEN 0 ELSE icurrencyid END) AS icurrency
 //get po number
 //get po number
 $po_number =DB::table('OrdersDf')
-->where('DefaultCounter',101000000)
+->where('DefaultCounter',101000002)
 ->select('OrderPrefix','DNoPadLgth','NextCustNo')
 ->first();
 
@@ -3649,7 +3656,7 @@ $po_number =DB::table('OrdersDf')
 
 
 $update =DB::table('OrdersDf')
-->where('DefaultCounter',101000000)
+->where('DefaultCounter',101000002)
 ->update([
 'NextCustNo' => $po_number->NextCustNo +1
 ]);
@@ -3874,7 +3881,7 @@ $invoice_id = $invoice_id->autoindex;
 
 $update_udf =DB::table('_etblUserHistLink')
 ->insert([
-'userdictid' => 101000037,
+'userdictid' => 60,
 'Tableid' => $invoice_id,
 'UserValue' => 'MR'       
 ]);
@@ -5615,7 +5622,7 @@ $min_color_vol =$color_consolidated->min_color_vol ?? 0;
 $tbillmeter = "BILLCOL";
 $treadingdate = "1900-01-01";
 $total_col_con =$color_consolidated->total_color ?? 0;
-$over_n_aboveC =$mono_consolidated->over_n_aboveC ?? 0;
+$over_n_aboveC =$color_consolidated->over_n_aboveC ?? 0;
 
 
 

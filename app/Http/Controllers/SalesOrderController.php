@@ -77,7 +77,7 @@ class SalesOrderController extends Controller
                  
              //get po number
         $po_number =DB::table('OrdersDf')
-        ->where('DefaultCounter',101000000)
+        ->where('DefaultCounter',101000002)
         ->select('OrderPrefix','DNoPadLgth','NextCustNo')
         ->first();
 
@@ -85,7 +85,7 @@ class SalesOrderController extends Controller
         
 
         $update =DB::table('OrdersDf')
-        ->where('DefaultCounter',101000000)
+        ->where('DefaultCounter',101000002)
         ->update([
         'NextCustNo' => $po_number->NextCustNo +1
        ]);
@@ -307,7 +307,7 @@ class SalesOrderController extends Controller
 
         $update_udf =DB::table('_etblUserHistLink')
         ->insert([
-       'userdictid' => 101000037,
+       'userdictid' => 60,
        'Tableid' => $invoice_id,
        'UserValue' => 'MR'       
       ]);
@@ -2772,7 +2772,7 @@ DB::raw("(CASE WHEN icurrencyid = null THEN 0 ELSE icurrencyid END) AS icurrency
        
    //get po number
 $po_number =DB::table('OrdersDf')
-->where('DefaultCounter',101000000)
+->where('DefaultCounter',101000002)
 ->select('OrderPrefix','DNoPadLgth','NextCustNo')
 ->first();
 
@@ -2780,7 +2780,7 @@ $po_number =DB::table('OrdersDf')
 
 
 $update =DB::table('OrdersDf')
-->where('DefaultCounter',101000000)
+->where('DefaultCounter',101000002)
 ->update([
 'NextCustNo' => $po_number->NextCustNo +1
 ]);
@@ -3002,7 +3002,7 @@ $invoice_id = $invoice_id->autoindex;
 
 $update_udf =DB::table('_etblUserHistLink')
 ->insert([
-'userdictid' => 101000037,
+'userdictid' => 60,
 'Tableid' => $invoice_id,
 'UserValue' => 'MR'       
 ]);

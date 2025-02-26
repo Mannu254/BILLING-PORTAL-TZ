@@ -300,7 +300,7 @@ var grandTotalCol = 0;
     <script type="text/javascript">
     var timeout;
     var delay = 1000; 
-    $(".color_cmr,.mono_pmr,.mono_cmr,.color_cmr").keyup(function() {
+    $(".color_cmr,.mono_pmr,.mono_cmr,.color_pmr").keyup(function() {
             
       timeout = setTimeout(function(){ 
     $("input[name='mono_pmr[]']").each(function (index){
@@ -428,9 +428,10 @@ var billing_date = $('#billing_date').val();
 
 <script>
   $(document).ready(function() {  
-  $(".color_cmr,.mono_pmr,.mono_cmr,.color_cmr").keyup(function() {    
+  $(".color_cmr,.color_pmr").keyup(function() {   
+    var grandTotalCol = 0; 
   $("input[name='color_cmr[]']").each(function (index) {
-  var grandTotalMon = 0;
+  
 
  var color_cmr = $("input[name='color_cmr[]']").eq(index).val().replace(/,/g, "");
  var color_pmr = $("input[name='color_pmr[]']").eq(index).val().replace(/,/g, ""); 
@@ -449,7 +450,7 @@ var billing_date = $('#billing_date').val();
 
 <script>
 $(document).ready(function() {
-$(".color_cmr,.mono_pmr,.mono_cmr,.color_cmr").keyup(function() {
+$(".mono_pmr,.mono_cmr").keyup(function() {
   var grandTotalMon = 0;
 
 $("input[name='mono_cmr[]']").each(function (index) {
